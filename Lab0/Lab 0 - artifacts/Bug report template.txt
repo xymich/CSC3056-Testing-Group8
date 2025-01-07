@@ -1,0 +1,20 @@
+The function/feature being tested:
+(e.g., Login)
+...
+
+The initial state of the system:
+(e.g., System is on and is idle, i.e., not already serving a customer)
+...
+
+Steps to reproduce the defect/bug:
+(e.g., Insert a card, then enter correct card number and PIN)
+-Step 1
+-Step 2
+-...
+
+What was the expected outcome/output/behavior?:
+(e.g., the system successfully accepts the customer, and shows the banking menu)
+...
+
+What was the actual outcome/output/behavior?
+...
