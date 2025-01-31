@@ -1,0 +1,9 @@
+BEFORE THURS:
+write testing plan exploratory
+compare manual vs self exploratory
+check all bugs if fixed or new bugs made
+
+ON THURS:
+talk about manual (peer testing)
+talk about challenges faced
+write introduction `

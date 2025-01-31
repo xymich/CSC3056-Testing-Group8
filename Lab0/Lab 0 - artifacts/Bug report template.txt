@@ -3,14 +3,16 @@ The function/feature being tested:
 ...
 
 The initial state of the system:
-(e.g., System is on and is idle, i.e., not already serving a customer)
-...
+System is off and not serving a customer, Awaiting operator input.
 
 Steps to reproduce the defect/bug:
 (e.g., Insert a card, then enter correct card number and PIN)
--Step 1
--Step 2
--...
+-Step 1: Click the "ON" button (system power button situated bottom right) to turn on simulated ATM
+-Step 2: Enter any number of 20$ bills and press enter. (i.e. 5 bills, equal to 100$ available in simulated ATM)
+-Step 3: Click the "Click to insert card" button
+-Step 4: Enter a valid credit card number via keyboard
+-Step 5: Enter correct pin for selected valid credit card and click the "enter" button via simulated keypad.
+-Step 6: 
 
 What was the expected outcome/output/behavior?:
 (e.g., the system successfully accepts the customer, and shows the banking menu)
