@@ -92,10 +92,15 @@ public class SimpleBankingApp {
 	 * @return A double value, being the balance of the account
 	 */
 	public static double getBalance(String account_number) {
-		return 0;
-		// TODO
-		
+		double balance = 0;
+		for (Transaction transaction : transactions) {
+			if (transaction.getAccountNumber().equals(account_number)) {
+				balance += transaction.getTransactionAmount();
+			}
+		}
+		return balance;					//addition
 	}
+	
 	
 	
 	//////////////////////////////////////////////////////
