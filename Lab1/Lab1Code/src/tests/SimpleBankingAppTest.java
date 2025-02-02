@@ -74,12 +74,24 @@ public class SimpleBankingAppTest {
 	/* TODO
 	public static void testWithdrawals() {
 		// 1-Setup phase
+		double balanceBefore = SimpleBankingApp.getBalance("5495-1234"); 
+		double withdrawalAmount = -30.00;
 		
 		// 2-Exercise phase
+		SimpleBankingApp.addTransaction("5495-1234", withdrawalAmount);
+		double balanceAfter = SimpleBankingApp.getBalance("5495-1234");
 		
 		// 3-verify
+		assert balanceBefore + withdrawalAmount == balanceAfter;
+		if (balanceBefore + withdrawalAmount == balanceAfter)
+			System.out.println(ANSI_GREEN + "testWithdrawals: TC1 passed"+ ANSI_RESET);
+		else {
+			System.out.println(ANSI_RED + "testWithdrawals: TC1 FAILED XXX: balanceBefore + withdrawalAmount != balanceAfter");
+			System.out.format("testWithdrawals: balanceBefore = %.2f ; withdrawalAmount = %.2f ; balanceAfter = %.2f %s\n", balanceBefore , withdrawalAmount , balanceAfter, ANSI_RESET);
+
+   		// 4-tear-down
+		SimpleBankingApp.addTransaction("5495-1234", -withdrawalAmount);
 		
-		// 4-tear-down
 	}
 	*/
 	
@@ -87,7 +99,7 @@ public class SimpleBankingAppTest {
 		// we need to call our test cases (methods)
 		testLoadData();
 		testDeposits();
-		// testWithdrawals(); -- uncomment this call, when you have developed the test method (test case)
+		testWithdrawals();
 	}
 
 }
