@@ -32,8 +32,8 @@ public class SimpleBankingApp {
 	
 	public static void printAllUsers() {
 		System.out.println("There are: " + users.size() + " users in the system.");	
-		System.out.println(String.format("%-25s| %-15s| %-15s| %-15s| %-15s", 
-				"username", "password", "first_name", "last_name", "mobile_number"));
+		System.out.println(String.format("%-10s| %-30s| %-10s| %-15s| %-15s",
+				"Account #", "username_of_account_holder", "type", "opening_date", "Balance"));
 		System.out.println("-------------------------------------------------------------------------------------------");
 		for  (int i = 0; i < users.size(); i++) 
             System.out.println(users.get(i).toString());	
@@ -68,8 +68,9 @@ public class SimpleBankingApp {
 		System.out.println("There are: " + accounts.size() + " accounts in the system.");
 		//System.out.println("Account_number | username_of_account_holder | account_type | account_opening_date");
 
-		System.out.println(String.format("%-10s| %-30s| %-10s| %-15s| %-15s", 
+		System.out.println(String.format("%-10s| %-30s| %-10s| %-15s| %-15s",
 				"Account #", "username_of_account_holder", "type", "opening_date", "Balance"));
+
 		System.out.println("--------------------------------------------------------------------------------");
 		
 		for  (int i = 0; i < accounts.size(); i++) 
@@ -94,8 +95,8 @@ public class SimpleBankingApp {
 	public static double getBalance(String account_number) {
 		double balance = 0;
 		for (Transaction transaction : transactions) {
-			if (transaction.getAccountNumber().equals(account_number)) {
-				balance += transaction.getTransactionAmount();
+			if (transaction.getAccount_number().equals(account_number)) {
+				balance += transaction.getTransaction_amount();
 			}
 		}
 		return balance;					//addition

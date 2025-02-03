@@ -91,9 +91,10 @@ public class SimpleBankingAppTest {
 
    		// 4-tear-down
 		SimpleBankingApp.addTransaction("5495-1234", -withdrawalAmount);
+		}
 		
 	}
-	*/
+	
 	
 	public static void main(String[] args) {
 		// we need to call our test cases (methods)
