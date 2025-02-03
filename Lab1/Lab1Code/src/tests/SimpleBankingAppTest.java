@@ -71,7 +71,7 @@ public class SimpleBankingAppTest {
 	}
 
 	// this test method (test case) verifies if the Withdraw feature works properly
-	/* TODO
+	
 	public static void testWithdrawals() {
 		// 1-Setup phase
 		double balanceBefore = SimpleBankingApp.getBalance("5495-1234"); 
