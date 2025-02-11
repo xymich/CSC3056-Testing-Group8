@@ -6,6 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Vector;
 
 public class AccountController {
+	
+	// test message text colours
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_RED = "\u001B[31m";
 
     /**
      * cal.  balance of a given account (by its number)         //need to go back to this
@@ -33,13 +38,13 @@ public class AccountController {
         boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println("Error: Account " + account_number + " does not exist. Transaction failed.");
+            System.out.println(ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." ANSI_RESET);
             return;
         }
 
         Transaction transaction = new Transaction(account_number, amount, new java.util.Date());
         transactions.add(transaction);
-        System.out.println("Transaction successful: Account " + account_number + " | Amount: $" + amount);
+        System.out.println(ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + ANSI_RESET);
     }
 
     /**

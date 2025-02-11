@@ -1,6 +1,6 @@
 package tests;
 
-import Controller.AccountController;
+import controller.AccountController;
 import model.Account;
 import model.Transaction;
 import java.util.ArrayList;
@@ -9,6 +9,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AccountControllerTest {
+	
+	// test message text colours
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_CYAN = "\u001B[36m";
 
     @Test
     public void testGetBalance() {
