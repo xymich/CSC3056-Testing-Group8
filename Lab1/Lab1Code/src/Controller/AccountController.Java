@@ -1,4 +1,4 @@
-package controllers;
+package controller;
 
 import model.Account;
 import model.Transaction;
