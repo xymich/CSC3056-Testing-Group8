@@ -33,13 +33,13 @@ public class AccountController {
         boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println("⚠️ Error: Account " + account_number + " does not exist. Transaction failed.");
+            System.out.println("Error: Account " + account_number + " does not exist. Transaction failed.");
             return;
         }
 
         Transaction transaction = new Transaction(account_number, amount, new java.util.Date());
         transactions.add(transaction);
-        System.out.println("✅ Transaction successful: Account " + account_number + " | Amount: $" + amount);
+        System.out.println("Transaction successful: Account " + account_number + " | Amount: $" + amount);
     }
 
     /**
