@@ -46,6 +46,10 @@ public class AccountController {
         transactions.add(transaction);
         System.out.println(ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + ANSI_RESET);
     }
+    
+    public static ArrayList<Transaction> getTransactionsForAccount(String account_number) {
+    	
+    }
 
     /**
      * prints all accounts along with their balance

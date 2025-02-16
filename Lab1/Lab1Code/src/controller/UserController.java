@@ -13,12 +13,12 @@ public class UserController {
      */
     public static Vector<User> loadUserData() {
         Vector<User> users = new Vector<>();
-        users.add(new User("mike", "my_passwd", "Mike", "Smith", "07771234567"));
+        users.add(new User("mike@mikemail.com", "my_passwd", "Mike", "Smith", "07771234567"));
         users.add(new User("james.cameron@gmail.com", "angel", "James", "Cameron", "07777654321"));
         users.add(new User("julia.roberts@gmail.com", "change_me", "Julia", "Roberts", "07770123456"));
         return users;
     }
-
+	
     /**
      * prints all users in the system.
      *
