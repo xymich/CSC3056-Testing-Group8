@@ -105,6 +105,11 @@ public class SimpleBankingApp {
 		// Deposit: adding a transaction with a positive value
 		// Withdraw: adding a transaction with a negative value
 		addTransaction("5495-1234", -50.21);
+		
+		System.out.println();
+		System.out.println(getBalance("5495-1234"));
+		System.out.println();
+		
 		System.out.println("Account: after the 1st addTransaction function call...");
 		printAllAccounts();
 		
@@ -115,8 +120,7 @@ public class SimpleBankingApp {
 		// let's print the accounts and their balance to see if the above transaction have impacted their balances
 		System.out.println("Account: after the 2nd/3rd addTransaction function calls...");
 		printAllAccounts();
-		
-
+	
 	}
 
 }

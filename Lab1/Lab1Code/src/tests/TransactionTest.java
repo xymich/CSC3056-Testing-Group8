@@ -19,7 +19,6 @@ public class TransactionTest {
         String test_AccountNumber = "12345";
         double test_TransactionAmount = 150.75;
         Date test_TransactionDate = new Date();
-
         // 2. Exercise
         Transaction test_transaction = new Transaction(test_AccountNumber, test_TransactionAmount, test_TransactionDate);
 
@@ -41,7 +40,7 @@ public class TransactionTest {
         } else {
         	TestUtils.printCaseFail("Constructor_Transaction_date()");
         }
-        
+        System.out.println("Starting the assertions of the test method: testTransactionConstructor");
     	assert test_transaction.getAccount_number() == test_AccountNumber;
 		assert test_transaction.getTransaction_amount() == test_TransactionAmount;
 		assert test_transaction.getTransaction_date() != null;
@@ -50,6 +49,7 @@ public class TransactionTest {
     }
 
     public static void testGetAccountNumber() {
+    	
         Transaction test_transaction = new Transaction("98765", 200.00, new Date());
         String test_AccountNumber = "98765";
         if (test_transaction.getAccount_number().equals("98765")) {
@@ -57,7 +57,7 @@ public class TransactionTest {
         } else {
         	TestUtils.printCaseFail("GetAccountNumber()");
         }
-        
+        System.out.println("Starting the assertions of the test method: testGetAccountNumber");
         assert test_transaction.getAccount_number() == test_AccountNumber;
         
         TestUtils.printAssertPass("Transaction", "GetAccountNumber");
@@ -71,7 +71,7 @@ public class TransactionTest {
         } else {
         	TestUtils.printCaseFail("GetTransactionAmount()");
         }
-        
+        System.out.println("Starting the assertions of the test method: testGetTransactionAmount");
         assert test_transaction.getTransaction_amount() == test_TransactionAmount;
         
         TestUtils.printAssertPass("Transaction", "GetTransactionAmount");
@@ -86,7 +86,7 @@ public class TransactionTest {
         } else {
         	TestUtils.printCaseFail("testGetTransactionDate()");
         }
-        
+        System.out.println("Starting the assertions of the test method: testGetTransactionDate");
         assert test_transaction.getTransaction_date() == date;
         
         TestUtils.printAssertPass("Transaction", "getTransactionDate");

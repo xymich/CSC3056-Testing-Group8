@@ -91,6 +91,37 @@ public class SimpleBankingAppTest {
 		
 	}
 	
+	public static void testGetBalance() {
+		double balance = -333;
+		
+		//test non existent account number
+		balance = SimpleBankingApp.getBalance("99999"); 
+		if (balance == -1) {
+			TestUtils.printCasePass("GetBalanceNullAccount");
+		} else {
+			TestUtils.printCaseFail("GetBalanceNullAccount");
+		}
+		
+		//test valid account number assuming balance is 0.00
+		balance = SimpleBankingApp.getBalance("5495-1234"); 
+		if (balance == 0.00) {
+			TestUtils.printCasePass("GetBalance");
+		} else {
+			TestUtils.printCaseFail("GetBalance");
+		}
+		
+		//test updated balance
+		SimpleBankingApp.addTransaction("5495-1234", 100.50);
+		balance = SimpleBankingApp.getBalance("5495-1234"); 
+		if (balance >= 100.50) {
+			TestUtils.printCasePass("GetBalanceUpdated");
+		} else {
+			TestUtils.printCaseFail("GetBalanceUpdated");
+		}
+		
+		
+	}
+	
 	public static void testGetAllTransactionsForAccount() {
 		SimpleBankingApp.getTransactionsForAccount("5495-1234");
 		// Should print out all Transactions for the specified account in Console.
@@ -100,6 +131,7 @@ public class SimpleBankingAppTest {
 	public static void main(String[] args) {
 		// we need to call our test cases (methods)
 		testLoadData();
+		testGetBalance();
 		testDeposits();
 		testWithdrawals();
 		testGetAllTransactionsForAccount();
