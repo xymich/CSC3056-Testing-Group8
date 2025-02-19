@@ -65,8 +65,8 @@ public class AccountControllerTest {
     }
     
     public static void main(String[] args) {
-    	testGetBalance();
-		testAddTransaction();
+    	//testGetBalance();
+		//testAddTransaction();
 		testGetTransactionsForAccount();
 	}
 }

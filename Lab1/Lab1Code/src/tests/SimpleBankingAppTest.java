@@ -135,7 +135,7 @@ public class SimpleBankingAppTest {
 		SimpleBankingApp.addTransaction("5495-1234", updatedBalance);
 		assert SimpleBankingApp.getBalance("5495-1234") == updatedBalance;
 		
-		TestUtils.printAssertPass("SimpleBankingAppTest", "testGetBalance");
+		TestUtils.printAssertPass("SimpleBankingApp", "testGetBalance");
 		
 	}
 	
@@ -149,9 +149,9 @@ public class SimpleBankingAppTest {
 		// we need to call our test cases (methods)
 		testLoadData();
 		testGetBalance();
-		//testDeposits();
-		//testWithdrawals();
-		//testGetAllTransactionsForAccount();
+		testDeposits();
+		testWithdrawals();
+		testGetAllTransactionsForAccount();
 	}
 
 }

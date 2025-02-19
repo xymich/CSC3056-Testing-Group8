@@ -110,6 +110,10 @@ public class SimpleBankingApp {
 		System.out.println(getBalance("5495-1234"));
 		System.out.println();
 		
+		System.out.println();
+		getTransactionsForAccount("5495-1234");
+		System.out.println();
+		
 		System.out.println("Account: after the 1st addTransaction function call...");
 		printAllAccounts();
 		
