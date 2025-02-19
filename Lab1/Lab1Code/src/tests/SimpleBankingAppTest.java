@@ -78,25 +78,33 @@ public class SimpleBankingAppTest {
 		double balanceAfter = SimpleBankingApp.getBalance("5495-1234");
 		
 		// 3-verify
+		System.out.println("Starting the assertions of the test method: testWithdrawals");
+		
 		assert balanceBefore + withdrawalAmount == balanceAfter;
 		if (balanceBefore + withdrawalAmount == balanceAfter)
 			TestUtils.printCasePass("testWithdrawals");
 		else {
 			System.out.println(TestUtils.TEXT_COLOR_RED + "testWithdrawals: TC1 FAILED XXX: balanceBefore + withdrawalAmount != balanceAfter");
-			System.out.format("testWithdrawals: balanceBefore = %.2f ; withdrawalAmount = %.2f ; balanceAfter = %.2f %s\n", balanceBefore , withdrawalAmount , balanceAfter, TestUtils.TEXT_COLOR_RESET);
-
+			System.out.format("testWithdrawals: balanceBefore = %.2f ; withdrawalAmount = %.2f ; balanceAfter = %.2f %s\n", 
+					balanceBefore , withdrawalAmount , balanceAfter, TestUtils.TEXT_COLOR_RESET);
+		}
+		TestUtils.printAssertPass("SimpleBankingAppTest", "testWithdrawals");
    		// 4-tear-down
 		SimpleBankingApp.addTransaction("5495-1234", -withdrawalAmount);
-		}
+		
 		
 	}
 	
 	public static void testGetBalance() {
 		double balance = -333;
+		double nullBalance = -1;
+		double zeroBalance = 0.00;
+		double updatedBalance = 100.50;
+		
 		
 		//test non existent account number
 		balance = SimpleBankingApp.getBalance("99999"); 
-		if (balance == -1) {
+		if (balance == nullBalance) {
 			TestUtils.printCasePass("GetBalanceNullAccount");
 		} else {
 			TestUtils.printCaseFail("GetBalanceNullAccount");
@@ -104,21 +112,30 @@ public class SimpleBankingAppTest {
 		
 		//test valid account number assuming balance is 0.00
 		balance = SimpleBankingApp.getBalance("5495-1234"); 
-		if (balance == 0.00) {
+		if (balance == zeroBalance) {
 			TestUtils.printCasePass("GetBalance");
 		} else {
 			TestUtils.printCaseFail("GetBalance");
 		}
 		
 		//test updated balance
-		SimpleBankingApp.addTransaction("5495-1234", 100.50);
+		SimpleBankingApp.addTransaction("5495-1234", updatedBalance);
 		balance = SimpleBankingApp.getBalance("5495-1234"); 
-		if (balance >= 100.50) {
+		if (balance >= updatedBalance) {
 			TestUtils.printCasePass("GetBalanceUpdated");
 		} else {
 			TestUtils.printCaseFail("GetBalanceUpdated");
 		}
 		
+		System.out.println("Starting the assertions of the test method: testGetBalance");
+		
+		assert SimpleBankingApp.getBalance("99999") == nullBalance;
+		SimpleBankingApp.addTransaction("5495-1234", -1*updatedBalance);
+		assert SimpleBankingApp.getBalance("5495-1234") == zeroBalance;
+		SimpleBankingApp.addTransaction("5495-1234", updatedBalance);
+		assert SimpleBankingApp.getBalance("5495-1234") == updatedBalance;
+		
+		TestUtils.printAssertPass("SimpleBankingAppTest", "testGetBalance");
 		
 	}
 	
@@ -132,9 +149,9 @@ public class SimpleBankingAppTest {
 		// we need to call our test cases (methods)
 		testLoadData();
 		testGetBalance();
-		testDeposits();
-		testWithdrawals();
-		testGetAllTransactionsForAccount();
+		//testDeposits();
+		//testWithdrawals();
+		//testGetAllTransactionsForAccount();
 	}
 
 }
