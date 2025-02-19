@@ -25,54 +25,56 @@ public class TransactionTest {
 
         // 3. Verify
         if (test_transaction.getAccount_number().equals(test_AccountNumber)) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC1 Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("Constructor_Account_number()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC1 FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("Constructor_Account_number()");
         }
 
         if (test_transaction.getTransaction_amount() == test_TransactionAmount) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC2 Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("Constructor_Transaction_amount()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC2 FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("Constructor_Transaction_amount()");
         }
 
         if (test_transaction.getTransaction_date() != null) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC3 Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("Constructor_Transaction_date()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC3 FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("Constructor_Transaction_date()");
         }
         
     	assert test_transaction.getAccount_number() == test_AccountNumber;
 		assert test_transaction.getTransaction_amount() == test_TransactionAmount;
 		assert test_transaction.getTransaction_date() != null;
 		
-		System.out.println("All java assertions in the Transaction Constructor test suite passed.");
+        TestUtils.printAssertPass("Transaction", "Constructor");
     }
 
     public static void testGetAccountNumber() {
         Transaction test_transaction = new Transaction("98765", 200.00, new Date());
         String test_AccountNumber = "98765";
         if (test_transaction.getAccount_number().equals("98765")) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetAccountNumber: Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("GetAccountNumber()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetAccountNumber: FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("GetAccountNumber()");
         }
         
         assert test_transaction.getAccount_number() == test_AccountNumber;
-        System.out.println("All java assertions in the Transaction GetAccountNumber test suite passed.");
+        
+        TestUtils.printAssertPass("Transaction", "GetAccountNumber");
     }
 
     public static void testGetTransactionAmount() {
         Transaction test_transaction = new Transaction("12345", 300.50, new Date());
         double test_TransactionAmount = 300.50;
         if (test_transaction.getTransaction_amount() == 300.50) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetTransactionAmount: Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("GetTransactionAmount()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetTransactionAmount: FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("GetTransactionAmount()");
         }
         
         assert test_transaction.getTransaction_amount() == test_TransactionAmount;
-        System.out.println("All java assertions in the Transaction GetTransactionAmount test suite passed.");
+        
+        TestUtils.printAssertPass("Transaction", "GetTransactionAmount");
     }
 
     public static void testGetTransactionDate() {
@@ -80,12 +82,13 @@ public class TransactionTest {
         Transaction test_transaction = new Transaction("12345", 500.75, date);
         
         if (test_transaction.getTransaction_date().equals(date)) {
-            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetTransactionDate: Passed" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCasePass("testGetTransactionDate()");
         } else {
-            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetTransactionDate: FAILED" + TestUtils.TEXT_COLOR_RESET);
+        	TestUtils.printCaseFail("testGetTransactionDate()");
         }
         
         assert test_transaction.getTransaction_date() == date;
-        System.out.println("All java assertions in the Transaction getTransactionDate test suite passed.");
+        
+        TestUtils.printAssertPass("Transaction", "getTransactionDate");
     }
 }

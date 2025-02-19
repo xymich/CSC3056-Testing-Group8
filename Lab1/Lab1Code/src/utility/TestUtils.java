@@ -1,6 +1,7 @@
 package utility;
 
 public class TestUtils {
+
 	// test message text colours
 	public static final String TEXT_COLOR_RESET = "\u001B[0m";
 	public static final String TEXT_COLOR_GREEN = "\u001B[32m";
@@ -15,6 +16,3 @@ public class TestUtils {
 	public static void printAssertPass(String tcClass, String tcMethod ) {
 		System.out.println(TEXT_COLOR_GREEN + "All java assertions in the AccountController " + tcClass + " " + tcMethod + " test suite passed." + TEXT_COLOR_RESET);
 	}
-}
-
-

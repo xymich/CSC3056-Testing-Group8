@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Vector;
 
+import controller.AccountController;
 import model.Account;
 import model.Transaction;
 import model.User;
@@ -64,24 +65,17 @@ public class SimpleBankingApp {
 		}  
 	}
 	
+	public static void getTransactionsForAccount(String account_number) {
+		System.out.println(AccountController.getTransactionsForAccount(account_number, transactions, accounts));
+	}
+	
 	public static void printAllAccounts() {
-		System.out.println("There are: " + accounts.size() + " accounts in the system.");
-		//System.out.println("Account_number | username_of_account_holder | account_type | account_opening_date");
-
-		System.out.println(String.format("%-10s| %-30s| %-10s| %-15s| %-15s",
-				"Account #", "username_of_account_holder", "type", "opening_date", "Balance"));
-
-		System.out.println("--------------------------------------------------------------------------------");
-		
-		for  (int i = 0; i < accounts.size(); i++) 
-            System.out.println(accounts.get(i).toString() + "| $" + getBalance(accounts.get(i).getAccount_number()));
-		
-		System.out.println();
+		AccountController.printAllAccounts(accounts, transactions);
 	}
 	
 	public static void addTransaction(String account_number, double amount) { 
-		Transaction aTransaction =  new Transaction(account_number, amount, Calendar.getInstance().getTime());
-		transactions.add(aTransaction);
+		AccountController.addTransaction(account_number, amount, transactions, accounts);
+);
 	}
 	
 	/**
@@ -93,15 +87,8 @@ public class SimpleBankingApp {
 	 * @return A double value, being the balance of the account
 	 */
 	public static double getBalance(String account_number) {
-		double balance = 0;
-		for (Transaction transaction : transactions) {
-			if (transaction.getAccount_number().equals(account_number)) {
-				balance += transaction.getTransaction_amount();
-			}
-		}
-		return balance;		//addition
+		return AccountController.getBalance(account_number, transactions);	//addition
 	}
-	
 	
 	//////////////////////////////////////////////////////
 	public static void main(String[] args) {

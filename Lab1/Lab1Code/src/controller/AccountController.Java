@@ -4,6 +4,8 @@ import model.Account;
 import model.Transaction;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Vector;
+
 import utility.TestUtils;
 
 public class AccountController {
@@ -16,7 +18,7 @@ public class AccountController {
      * @param transactions    list of all transactions
      * @return  calculated balance.
      */
-    public static double getBalance(String account_number, ArrayList<Transaction> transactions) {
+    public static double getBalance(String account_number, Vector<Transaction> transactions) {
         return transactions.stream()
                 .filter(transaction -> transaction.getAccount_number().equals(account_number))
                 .mapToDouble(Transaction::getTransaction_amount)
@@ -31,7 +33,7 @@ public class AccountController {
      * @param transactions    list of transactions
      * @param accounts        list of accounts (used for validation)
      */
-    public static void addTransaction(String account_number, double amount, ArrayList<Transaction> transactions, ArrayList<Account> accounts) {
+    public static void addTransaction(String account_number, double amount, Vector<Transaction> transactions, Vector<Account> accounts) {
         boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
@@ -44,8 +46,8 @@ public class AccountController {
         System.out.println(TestUtils.TEXT_COLOR_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + TestUtils.TEXT_COLOR_RESET);
     }
     
-    public static ArrayList<Transaction> getTransactionsForAccount(String account_number, ArrayList<Transaction> transactions, ArrayList<Account> accounts) {
-    	ArrayList<Transaction> user_Transactions = new ArrayList<Transaction>();
+    public static Vector<Transaction> getTransactionsForAccount(String account_number, Vector<Transaction> transactions, Vector<Account> accounts) {
+    	Vector<Transaction> user_Transactions = new Vector<Transaction>();
     	
     	boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
@@ -64,7 +66,7 @@ public class AccountController {
      * @param accounts      list of accounts
      * @param transactions  list of transactions (to calculate balance)
      */
-    public static void printAllAccounts(ArrayList<Account> accounts, ArrayList<Transaction> transactions) {
+    public static void printAllAccounts(Vector<Account> accounts, Vector<Transaction> transactions) {
         System.out.println("There are: " + accounts.size() + " accounts in the system.");
         System.out.println(String.format("%-10s| %-30s| %-10s| %-15s| %-15s",
                 "Account #", "Username", "Type", "Opening Date", "Balance"));

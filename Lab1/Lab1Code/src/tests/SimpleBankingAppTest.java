@@ -90,12 +90,18 @@ public class SimpleBankingAppTest {
 		
 	}
 	
+	public static void testGetAllTransactionsForAccount() {
+		SimpleBankingApp.getTransactionsForAccount("5495-1234");
+		// Should print out all Transactions for the specified account in Console.
+	}
+	
 	
 	public static void main(String[] args) {
 		// we need to call our test cases (methods)
 		testLoadData();
 		testDeposits();
 		testWithdrawals();
+		testGetAllTransactionsForAccount();
 	}
 
 }
