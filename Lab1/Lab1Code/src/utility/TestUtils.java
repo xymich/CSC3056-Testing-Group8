@@ -16,3 +16,5 @@ public class TestUtils {
 	public static void printAssertPass(String tcClass, String tcMethod ) {
 		System.out.println(TEXT_COLOR_GREEN + "All java assertions in the AccountController " + tcClass + " " + tcMethod + " test suite passed." + TEXT_COLOR_RESET);
 	}
+}
+

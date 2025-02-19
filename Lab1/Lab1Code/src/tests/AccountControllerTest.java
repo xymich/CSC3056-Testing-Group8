@@ -4,17 +4,16 @@ import controller.AccountController;
 import model.Account;
 import model.Transaction;
 import utility.TestUtils;
-
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.Vector;
 
 public class AccountControllerTest {
 	
     public static void testGetBalance() {
-        ArrayList<Account> accounts = new ArrayList<>();
+    	Vector<Account> accounts = new Vector<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
 
-        ArrayList<Transaction> transactions = new ArrayList<>();
+        Vector<Transaction> transactions = new Vector<>();
         transactions.add(new Transaction("12345", 200.0, new Date()));
         transactions.add(new Transaction("12345", -50.0, new Date()));
         
@@ -31,10 +30,10 @@ public class AccountControllerTest {
     }
 
     public static void testAddTransaction() {
-        ArrayList<Account> accounts = new ArrayList<>();
+    	Vector<Account> accounts = new Vector<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
 
-        ArrayList<Transaction> transactions = new ArrayList<>();
+        Vector<Transaction> transactions = new Vector<>();
 
         // Test: Valid transaction
         AccountController.addTransaction("12345", 50.0, transactions, accounts);
@@ -52,15 +51,15 @@ public class AccountControllerTest {
     }
 
     public static void testGetTransactionsForAccount() {
-    	ArrayList<Account> accounts = new ArrayList<>();
+    	Vector<Account> accounts = new Vector<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
         
-        ArrayList<Transaction> transactions = new ArrayList<>();
+        Vector<Transaction> transactions = new Vector<>();
         transactions.add(new Transaction("12345", 100.0, new Date()));
         transactions.add(new Transaction("12345", -50.0, new Date()));
         transactions.add(new Transaction("67890", 200.0, new Date()));
 
-        ArrayList<Transaction> result = AccountController.getTransactionsForAccount("12345", transactions, accounts);
+        Vector<Transaction> result = AccountController.getTransactionsForAccount("12345", transactions, accounts);
         assert result.size() == 2; // Should return 2 transactions
         TestUtils.printAssertPass("AccountController", "getTransactionsForAccount");
     }
