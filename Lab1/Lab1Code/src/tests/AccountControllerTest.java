@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class AccountControllerTest {
 	
-    public void testGetBalance() {
+    public static void testGetBalance() {
         ArrayList<Account> accounts = new ArrayList<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
 
@@ -30,7 +30,7 @@ public class AccountControllerTest {
         System.out.println("All java assertions in the AccountController getBalance test suite passed.");
     }
 
-    public void testAddTransaction() {
+    public static void testAddTransaction() {
         ArrayList<Account> accounts = new ArrayList<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
 
@@ -48,16 +48,26 @@ public class AccountControllerTest {
         AccountController.addTransaction("99999", 20.0, transactions, accounts);
         assert transactions.size() == 1; // Should not add
         
-        System.out.println(TestUtils.TEXT_COLOR_GREEN + "All java assertions in the AccountController addTransaction test suite passed." + TestUtils.TEXT_COLOR_RESET);
+        TestUtils.printAssertPass("AccountController", "addTransaction");
     }
 
-//    public void testGetTransactionsForAccount() {
-//        ArrayList<Transaction> transactions = new ArrayList<>();
-//        transactions.add(new Transaction("12345", 100.0, new Date()));
-//        transactions.add(new Transaction("12345", -50.0, new Date()));
-//        transactions.add(new Transaction("67890", 200.0, new Date()));
-//
-//        ArrayList<Transaction> result = AccountController.getTransactionsForAccount("12345", transactions);
-//        assert result.size() == 2; // Should return 2 transactions
-//    }
+    public static void testGetTransactionsForAccount() {
+    	ArrayList<Account> accounts = new ArrayList<>();
+        accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
+        
+        ArrayList<Transaction> transactions = new ArrayList<>();
+        transactions.add(new Transaction("12345", 100.0, new Date()));
+        transactions.add(new Transaction("12345", -50.0, new Date()));
+        transactions.add(new Transaction("67890", 200.0, new Date()));
+
+        ArrayList<Transaction> result = AccountController.getTransactionsForAccount("12345", transactions, accounts);
+        assert result.size() == 2; // Should return 2 transactions
+        TestUtils.printAssertPass("AccountController", "getTransactionsForAccount");
+    }
+    
+    public static void main(String[] args) {
+		testGetTransactionsForAccount();
+		//testAddTransaction();
+			
+	}
 }
