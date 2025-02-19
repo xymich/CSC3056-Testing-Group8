@@ -149,9 +149,9 @@ public class SimpleBankingAppTest {
 		// we need to call our test cases (methods)
 		testLoadData();
 		testGetBalance();
-		//testDeposits();
-		//testWithdrawals();
-		//testGetAllTransactionsForAccount();
+		testDeposits();
+		testWithdrawals();
+		testGetAllTransactionsForAccount();
 	}
 
 }
