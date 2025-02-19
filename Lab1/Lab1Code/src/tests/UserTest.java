@@ -1,14 +1,10 @@
 package tests;
 
 import model.User;
+import utility.TestUtils;
 
 //Testing of the User Class
 public class UserTest {
-
-	// test message text colours
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String ANSI_RED = "\u001B[31m";
 
 	public static void main(String[] args) {
 		
@@ -36,33 +32,33 @@ public class UserTest {
 		System.out.println("Starting the assertions of the test method: testUserConstructor");
 		
 		if (testUser.getUsername() == test_user) {
-			System.out.println(ANSI_GREEN + "TC1-getUsername-Passed"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_GREEN + "TC1-getUsername-Passed"+ TestUtils.ANSI_RESET);
 		} else {
-			System.out.println(ANSI_RED + "TC1-getUsername-FAILED" + ANSI_RESET);
+			System.out.println(TestUtils.ANSI_RED + "TC1-getUsername-FAILED" + TestUtils.ANSI_RESET);
 		}
 		
 		if (testUser.getPassword() == test_pass) {
-			System.out.println(ANSI_GREEN + "TC2-getPassword-Passed"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_GREEN + "TC2-getPassword-Passed"+ TestUtils.ANSI_RESET);
 		} else {
-			System.out.println(ANSI_RED + "TC2-getPassword-FAILED"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_RED + "TC2-getPassword-FAILED"+ TestUtils.ANSI_RESET);
 		}
 		
 		if (testUser.getFirst_name() == test_first) {
-			System.out.println(ANSI_GREEN + "TC3-getFirst_name-Passed"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_GREEN + "TC3-getFirst_name-Passed"+ TestUtils.ANSI_RESET);
 		} else {
-			System.out.println(ANSI_RED + "TC3-getFirst_name-FAILED"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_RED + "TC3-getFirst_name-FAILED"+ TestUtils.ANSI_RESET);
 		}
 		
 		if (testUser.getLast_name() == test_last) {
-			System.out.println(ANSI_GREEN + "TC4-getLast_name-Passed"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_GREEN + "TC4-getLast_name-Passed"+ TestUtils.ANSI_RESET);
 		} else {
-			System.out.println(ANSI_RED + "TC4-getLast_name-FAILED"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_RED + "TC4-getLast_name-FAILED"+ TestUtils.ANSI_RESET);
 		}
 		
 		if (testUser.getMobile_number() == test_mobile) {
-			System.out.println(ANSI_GREEN + "TC5-getMobile_number-Passed"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_GREEN + "TC5-getMobile_number-Passed"+ TestUtils.ANSI_RESET);
 		} else {
-			System.out.println(ANSI_RED + "TC5-getMobile_number-FAILED"+ ANSI_RESET);
+			System.out.println(TestUtils.ANSI_RED + "TC5-getMobile_number-FAILED"+ TestUtils.ANSI_RESET);
 		}
 		
 		assert testUser.getUsername() == test_user;

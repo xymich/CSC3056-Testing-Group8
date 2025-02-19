@@ -3,16 +3,13 @@ package tests;
 import controller.AccountController;
 import model.Account;
 import model.Transaction;
+import utility.TestUtils;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class AccountControllerTest {
 	
-	// test message text colours
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String ANSI_RED = "\u001B[31m";
-
     public void testGetBalance() {
         ArrayList<Account> accounts = new ArrayList<>();
         accounts.add(new Account("12345", "john_doe", "Standard", new Date()));
@@ -51,7 +48,7 @@ public class AccountControllerTest {
         AccountController.addTransaction("99999", 20.0, transactions, accounts);
         assert transactions.size() == 1; // Should not add
         
-        System.out.println(ANSI_GREEN + "All java assertions in the AccountController addTransaction test suite passed." + ANSI_RESET);
+        System.out.println(TestUtils.ANSI_GREEN + "All java assertions in the AccountController addTransaction test suite passed." + TestUtils.ANSI_RESET);
     }
 
 //    public void testGetTransactionsForAccount() {

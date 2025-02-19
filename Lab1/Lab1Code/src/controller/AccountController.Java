@@ -4,14 +4,11 @@ import model.Account;
 import model.Transaction;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import utility.TestUtils;
 
 public class AccountController {
 	
 	// using parameter comments for  better code readability
-	// test message text colours
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String ANSI_RED = "\u001B[31m";
 
     /**
      * cal.  balance of a given account (by its number)         //need to go back to this
@@ -38,13 +35,13 @@ public class AccountController {
         boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println(ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + ANSI_RESET);
+            System.out.println(TestUtils.ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.ANSI_RESET);
             return;
         }
 
         Transaction transaction = new Transaction(account_number, amount, new java.util.Date());
         transactions.add(transaction);
-        System.out.println(ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + ANSI_RESET);
+        System.out.println(TestUtils.ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + TestUtils.ANSI_RESET);
     }
     
     public static ArrayList<Transaction> getTransactionsForAccount(String account_number, ArrayList<Transaction> transactions, ArrayList<Account> accounts) {
@@ -53,7 +50,7 @@ public class AccountController {
     	boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println(ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + ANSI_RESET);
+            System.out.println(TestUtils.ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.ANSI_RESET);
             return user_Transactions;
         }
     	
