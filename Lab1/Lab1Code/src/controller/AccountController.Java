@@ -47,8 +47,18 @@ public class AccountController {
         System.out.println(ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + ANSI_RESET);
     }
     
-    public static ArrayList<Transaction> getTransactionsForAccount(String account_number) {
+    public static ArrayList<Transaction> getTransactionsForAccount(String account_number, ArrayList<Transaction> transactions, ArrayList<Account> accounts) {
+    	ArrayList<Transaction> user_Transactions = new ArrayList<Transaction>();
     	
+    	boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
+
+        if (!accountExists) {
+            System.out.println(ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + ANSI_RESET);
+            return user_Transactions;
+        }
+    	
+    	
+    	return user_Transactions;
     }
 
     /**

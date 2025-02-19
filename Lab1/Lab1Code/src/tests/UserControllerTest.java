@@ -16,7 +16,7 @@ public class UserControllerTest {
 		users_test = UserController.loadUserData();
 		assert users_test.size() >= 0;
 		
-		System.out.println("All java assertions in the UserController loadUsers test suite passed.");
+		System.out.println(ANSI_GREEN + "All java assertions in the UserController loadUsers test suite passed." + ANSI_RESET);
 	}
 	
 	public static void main(String[] args) {
