@@ -75,7 +75,6 @@ public class SimpleBankingApp {
 	
 	public static void addTransaction(String account_number, double amount) { 
 		AccountController.addTransaction(account_number, amount, transactions, accounts);
-);
 	}
 	
 	/**
@@ -87,7 +86,7 @@ public class SimpleBankingApp {
 	 * @return A double value, being the balance of the account
 	 */
 	public static double getBalance(String account_number) {
-		return AccountController.getBalance(account_number, transactions);	//addition
+		return AccountController.getBalance(account_number, transactions, accounts);	//addition
 	}
 	
 	//////////////////////////////////////////////////////

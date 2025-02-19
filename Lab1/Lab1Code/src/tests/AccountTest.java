@@ -28,27 +28,27 @@ public class AccountTest {
 		System.out.println("Starting the assertions of the test method: testAccountConstructor");
 		
 		if (testAccount.getAccount_number() == test_account_number) {
-			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC1-getAccount_number-Passed"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCasePass("getAccount_number");
 		} else {
-			System.out.println(TestUtils.TEXT_COLOR_RED + "TC1-getAccount_number-FAILED" + TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCaseFail("getAccount_number");
 		}
 		
 		if (testAccount.getUsername_of_account_holder() == test_username_of_account_holder) {
-			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC2-getUsername_of_account_holder-Passed"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCasePass("getUsername_of_account_holder");
 		} else {
-			System.out.println(TestUtils.TEXT_COLOR_RED + "TC2-getUsername_of_account_holder-FAILED"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCaseFail("getUsername_of_account_holder");
 		}
 		
 		if (testAccount.getAccount_type() == test_account_type) {
-			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC3-getAccount_type-Passed"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCasePass("getAccount_type");
 		} else {
-			System.out.println(TestUtils.TEXT_COLOR_RED + "TC3-getAccount_type-FAILED"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCaseFail("getAccount_type");
 		}
-		
+
 		if (testAccount.getAccount_opening_date() == test_account_opening_date) {
-			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC4-getAccount_opening_date-Passed"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCasePass("getAccount_opening_date");
 		} else {
-			System.out.println(TestUtils.TEXT_COLOR_RED + "TC4-getAccount_opening_date-FAILED"+ TestUtils.TEXT_COLOR_RESET);
+			TestUtils.printCaseFail("getAccount_opening_date");
 		}
 		
 		assert testAccount.getAccount_number() == test_account_number;
@@ -56,7 +56,7 @@ public class AccountTest {
 		assert testAccount.getAccount_type() == test_account_type;
 		assert testAccount.getAccount_opening_date() == test_account_opening_date;
 		
-		System.out.println("All java assertions in the Account Constructor test suite passed.");
+		TestUtils.printAssertPass("Account", "Constructor");
 	}	
 	
 }

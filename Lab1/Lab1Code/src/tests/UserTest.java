@@ -65,7 +65,6 @@ public class UserTest {
 		assert testUser.getFirst_name() == test_first;
 		assert testUser.getLast_name() == test_last;
 		assert testUser.getMobile_number() == test_mobile;
-		
 		TestUtils.printAssertPass("User", "Constructor");
 	}	
 }

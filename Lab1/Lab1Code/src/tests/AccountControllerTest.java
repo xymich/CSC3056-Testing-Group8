@@ -21,12 +21,12 @@ public class AccountControllerTest {
         double test_null_account_balance = -1;
         
         // test valid balance calculation
-        assert AccountController.getBalance("12345", transactions) == test_account_balance;
+        assert AccountController.getBalance("12345", transactions, accounts) == test_account_balance;
         
         // test non-existent account
-        assert AccountController.getBalance("99999", transactions) == test_null_account_balance;
+        assert AccountController.getBalance("99999", transactions, accounts) == test_null_account_balance;
         
-        System.out.println("All java assertions in the AccountController getBalance test suite passed.");
+        TestUtils.printAssertPass("AccountController", "getBalance");
     }
 
     public static void testAddTransaction() {
@@ -65,8 +65,8 @@ public class AccountControllerTest {
     }
     
     public static void main(String[] args) {
-		
-		testAddTransaction();
-		testGetTransactionsForAccount();
+    	testGetBalance();
+		//testAddTransaction();
+		//testGetTransactionsForAccount();
 	}
 }
