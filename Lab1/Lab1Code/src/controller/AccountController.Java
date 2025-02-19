@@ -35,13 +35,13 @@ public class AccountController {
         boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println(TestUtils.ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.TEXT_COLOR_RESET);
             return;
         }
 
         Transaction transaction = new Transaction(account_number, amount, new java.util.Date());
         transactions.add(transaction);
-        System.out.println(TestUtils.ANSI_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + TestUtils.ANSI_RESET);
+        System.out.println(TestUtils.TEXT_COLOR_GREEN + "Transaction successful: Account " + account_number + " | Amount: $" + amount + TestUtils.TEXT_COLOR_RESET);
     }
     
     public static ArrayList<Transaction> getTransactionsForAccount(String account_number, ArrayList<Transaction> transactions, ArrayList<Account> accounts) {
@@ -50,7 +50,7 @@ public class AccountController {
     	boolean accountExists = accounts.stream().anyMatch(acc -> acc.getAccount_number().equals(account_number));
 
         if (!accountExists) {
-            System.out.println(TestUtils.ANSI_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "Error: Account " + account_number + " does not exist. Transaction failed." + TestUtils.TEXT_COLOR_RESET);
             return user_Transactions;
         }
     	

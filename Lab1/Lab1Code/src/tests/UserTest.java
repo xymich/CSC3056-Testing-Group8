@@ -32,33 +32,33 @@ public class UserTest {
 		System.out.println("Starting the assertions of the test method: testUserConstructor");
 		
 		if (testUser.getUsername() == test_user) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC1-getUsername-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC1-getUsername-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC1-getUsername-FAILED" + TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC1-getUsername-FAILED" + TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testUser.getPassword() == test_pass) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC2-getPassword-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC2-getPassword-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC2-getPassword-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC2-getPassword-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testUser.getFirst_name() == test_first) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC3-getFirst_name-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC3-getFirst_name-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC3-getFirst_name-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC3-getFirst_name-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testUser.getLast_name() == test_last) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC4-getLast_name-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC4-getLast_name-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC4-getLast_name-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC4-getLast_name-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testUser.getMobile_number() == test_mobile) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC5-getMobile_number-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC5-getMobile_number-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC5-getMobile_number-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC5-getMobile_number-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		assert testUser.getUsername() == test_user;

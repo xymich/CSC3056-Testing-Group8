@@ -28,27 +28,27 @@ public class AccountTest {
 		System.out.println("Starting the assertions of the test method: testAccountConstructor");
 		
 		if (testAccount.getAccount_number() == test_account_number) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC1-getAccount_number-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC1-getAccount_number-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC1-getAccount_number-FAILED" + TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC1-getAccount_number-FAILED" + TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testAccount.getUsername_of_account_holder() == test_username_of_account_holder) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC2-getUsername_of_account_holder-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC2-getUsername_of_account_holder-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC2-getUsername_of_account_holder-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC2-getUsername_of_account_holder-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testAccount.getAccount_type() == test_account_type) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC3-getAccount_type-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC3-getAccount_type-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC3-getAccount_type-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC3-getAccount_type-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		if (testAccount.getAccount_opening_date() == test_account_opening_date) {
-			System.out.println(TestUtils.ANSI_GREEN + "TC4-getAccount_opening_date-Passed"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TC4-getAccount_opening_date-Passed"+ TestUtils.TEXT_COLOR_RESET);
 		} else {
-			System.out.println(TestUtils.ANSI_RED + "TC4-getAccount_opening_date-FAILED"+ TestUtils.ANSI_RESET);
+			System.out.println(TestUtils.TEXT_COLOR_RED + "TC4-getAccount_opening_date-FAILED"+ TestUtils.TEXT_COLOR_RESET);
 		}
 		
 		assert testAccount.getAccount_number() == test_account_number;

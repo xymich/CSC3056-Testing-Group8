@@ -48,7 +48,7 @@ public class AccountControllerTest {
         AccountController.addTransaction("99999", 20.0, transactions, accounts);
         assert transactions.size() == 1; // Should not add
         
-        System.out.println(TestUtils.ANSI_GREEN + "All java assertions in the AccountController addTransaction test suite passed." + TestUtils.ANSI_RESET);
+        System.out.println(TestUtils.TEXT_COLOR_GREEN + "All java assertions in the AccountController addTransaction test suite passed." + TestUtils.TEXT_COLOR_RESET);
     }
 
 //    public void testGetTransactionsForAccount() {

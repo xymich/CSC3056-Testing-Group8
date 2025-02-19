@@ -25,21 +25,21 @@ public class TransactionTest {
 
         // 3. Verify
         if (test_transaction.getAccount_number().equals(test_AccountNumber)) {
-            System.out.println(TestUtils.ANSI_GREEN + "testTransactionConstructor: TC1 Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC1 Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testTransactionConstructor: TC1 FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC1 FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
 
         if (test_transaction.getTransaction_amount() == test_TransactionAmount) {
-            System.out.println(TestUtils.ANSI_GREEN + "testTransactionConstructor: TC2 Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC2 Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testTransactionConstructor: TC2 FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC2 FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
 
         if (test_transaction.getTransaction_date() != null) {
-            System.out.println(TestUtils.ANSI_GREEN + "testTransactionConstructor: TC3 Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testTransactionConstructor: TC3 Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testTransactionConstructor: TC3 FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testTransactionConstructor: TC3 FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
         
     	assert test_transaction.getAccount_number() == test_AccountNumber;
@@ -53,9 +53,9 @@ public class TransactionTest {
         Transaction test_transaction = new Transaction("98765", 200.00, new Date());
         String test_AccountNumber = "98765";
         if (test_transaction.getAccount_number().equals("98765")) {
-            System.out.println(TestUtils.ANSI_GREEN + "testGetAccountNumber: Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetAccountNumber: Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testGetAccountNumber: FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetAccountNumber: FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
         
         assert test_transaction.getAccount_number() == test_AccountNumber;
@@ -66,9 +66,9 @@ public class TransactionTest {
         Transaction test_transaction = new Transaction("12345", 300.50, new Date());
         double test_TransactionAmount = 300.50;
         if (test_transaction.getTransaction_amount() == 300.50) {
-            System.out.println(TestUtils.ANSI_GREEN + "testGetTransactionAmount: Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetTransactionAmount: Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testGetTransactionAmount: FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetTransactionAmount: FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
         
         assert test_transaction.getTransaction_amount() == test_TransactionAmount;
@@ -80,9 +80,9 @@ public class TransactionTest {
         Transaction test_transaction = new Transaction("12345", 500.75, date);
         
         if (test_transaction.getTransaction_date().equals(date)) {
-            System.out.println(TestUtils.ANSI_GREEN + "testGetTransactionDate: Passed" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_GREEN + "testGetTransactionDate: Passed" + TestUtils.TEXT_COLOR_RESET);
         } else {
-            System.out.println(TestUtils.ANSI_RED + "testGetTransactionDate: FAILED" + TestUtils.ANSI_RESET);
+            System.out.println(TestUtils.TEXT_COLOR_RED + "testGetTransactionDate: FAILED" + TestUtils.TEXT_COLOR_RESET);
         }
         
         assert test_transaction.getTransaction_date() == date;
