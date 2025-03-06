@@ -79,22 +79,22 @@ public class RangeTest {
 	
 	@Test 
 	public void testEqualsDifferentObjSameRange() { 
-		Range rangeObjectToCompare = new Range(-1, 1);
+		Range rangeObjectToCompare = new Range(-6, 6);
 		assertEquals("The two objects compared are same range thus should return true",
 				true, rangeObjectUnderTest.equals(rangeObjectToCompare)); 
 	}
 	
 	@Test 
 	public void testEqualsDifferentObjDifferentRange() { 
-		Range rangeObjectToCompare = new Range(-2, 2);
-		assertEquals("The two objects compared are same range thus should return true",
+		Range rangeObjectToCompare = new Range(-2, 2);S
+		assertEquals("The two objects compared are different range thus should return false",
 				false, rangeObjectUnderTest.equals(rangeObjectToCompare)); 
 	}
 	
 	@Test
 	public void testEqualsNullObj() { 
 		Range rangeObjectToCompare = null;
-		assertEquals("The two objects compared are same range thus should return true",
+		assertEquals("The two objects compared are different and one is null thus should return false",
 				false, rangeObjectUnderTest.equals(rangeObjectToCompare)); 
 	}
 	
