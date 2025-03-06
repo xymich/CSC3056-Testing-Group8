@@ -152,9 +152,9 @@ public class RangeTest {
 		double testValue = -10;
 		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
 		
-		assertEquals("The upper bound value should be adjusted/expanded and should include original range keeping same lowerbound",
+		assertEquals("The lower bound value should be adjusted/expanded and should include original range keeping same upperbound",
 				true, actualExpandedRange.equals(expectedExpandedRange)); 
-	}
+	} // method seems to only change values randomly and does not keep inputted range, but changes it
 	 
 
 

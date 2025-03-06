@@ -23,4 +23,6 @@ public class DataUtilitiesTest {
         testValues.addValue(10.0, 1, 0); // Row 1, Column 0
         testValues.addValue(15.0, 2, 0); // Row 2, Column 0
         values2D = testValues;
+    }
+}
 
