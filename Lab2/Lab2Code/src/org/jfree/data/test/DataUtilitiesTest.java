@@ -24,7 +24,6 @@ public class DataUtilitiesTest {
         testValues.addValue(15.0, 2, 0); // Row 2, Column 0
         values2D = testValues;
     }
-}
 
         // Initialize test data for cumulative percentages
         DefaultKeyedValues kv = new DefaultKeyedValues();
@@ -38,3 +37,5 @@ public class DataUtilitiesTest {
     public void tearDown() {
         values2D = null;
         keyedValues = null;
+        
+    }
