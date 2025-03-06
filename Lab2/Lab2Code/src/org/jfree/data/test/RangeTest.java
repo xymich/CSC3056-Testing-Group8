@@ -9,6 +9,8 @@ import org.junit.Test;
 
 public class RangeTest {
 
+	// prerequisites  ------------------------------------
+	
 	private Range rangeObjectUnderTest;
 
 	@Before
@@ -29,46 +31,46 @@ public class RangeTest {
 	}
 	*/
 	
-	// getLowerBound() tests
+	// getLowerBound() tests ------------------------------------
 	@Test
 	public void testLowerBoundValueShouldBeNegative() {
 		assertEquals("The lower bound value of -6 and 6 should be -6",
-				-1, rangeObjectUnderTest.getLowerBound(), 0.000000001d);
+				-6, rangeObjectUnderTest.getLowerBound(), 0.000000001d);
 	}
 	
 	@Test
 	public void testLowerBoundValueShouldNotBeInnerPositive() {
-		assertNotEquals("The lower bound value of -6 and 6 should not be 1",
-				1, rangeObjectUnderTest.getLowerBound(), 0.000000001d);
+		assertNotEquals("The lower bound value of -6 and 6 should not be 6",
+				6, rangeObjectUnderTest.getLowerBound(), 0.000000001d);
 	}
 	
 	@Test
 	public void testLowerBoundValueShouldNotBeOuterNegative() {
-		assertNotEquals("The lower bound value of -6 and 6 should not be -10",
+		assertNotEquals("The lower bound value of -6 and 6 should not be outside at -10",
 				-10, rangeObjectUnderTest.getLowerBound(), 0.000000001d);
 	}
 	
 	
-	// getUpperBound() tests
+	// getUpperBound() tests ------------------------------------
 	@Test
 	public void testUpperBoundValueShouldBePos1() {
 		assertEquals("The upper bound value of -1 and 1 should be 1", 
-				1, rangeObjectUnderTest.getUpperBound(), 0.000000001d);
+				6, rangeObjectUnderTest.getUpperBound(), 0.000000001d);
 	}
 	
 	@Test
 	public void testUpperBoundValueShouldNotBeNeg1() {
-		assertNotEquals("The upper bound value of -1 and 1 should not be -1", 
-				-1, rangeObjectUnderTest.getUpperBound(), 0.000000001d);
+		assertNotEquals("The upper bound value of -1 and 1 should not be -6", 
+				-6, rangeObjectUnderTest.getUpperBound(), 0.000000001d);
 	}
 	
 	@Test
 	public void testUpperBoundValueShouldNotBePos2() {
-		assertNotEquals("The upper bound value of -1 and 1 should not be 10", 
+		assertNotEquals("The upper bound value of -1 and 1 should not be outside at 10", 
 				10, rangeObjectUnderTest.getUpperBound(), 0.000000001d);
 	}
 	
-	// equals() tests
+	// equals() tests ------------------------------------
 	@Test 
 	public void testEqualsSameObjSameRange() { 
 		assertEquals("The two objects compared are identical thus should return true",
@@ -96,7 +98,7 @@ public class RangeTest {
 				false, rangeObjectUnderTest.equals(rangeObjectToCompare)); 
 	}
 	
-	// expandToInclude() tests
+	// expandToInclude() tests ------------------------------------
 	@Test 
 	public void testExpandToIncludeWithinRangePositive() { 
 		Range expectedExpandedRange = new Range(-1, 1);
