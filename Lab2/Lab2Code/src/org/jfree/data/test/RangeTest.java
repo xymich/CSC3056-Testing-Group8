@@ -95,33 +95,66 @@ public class RangeTest {
 				false, rangeObjectUnderTest.equals(rangeObjectToCompare)); 
 	}
 	
-	@Test
-	public void test() {
-		
-	}
-	
 	// expandToInclude() tests
 	@Test 
-	public void testExpandToIncludeWithinRange() { 
-		//Range expectedExpandedRange = new Range(-1, 1); // now using rangeObjectUnderTest
-		double testValue = 0.99;
+	public void testExpandToIncludeWithinRangePositive() { 
+		Range expectedExpandedRange = new Range(-1, 1);
+		double testValue = 0.50;
 		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
-		double actualUpperValue = actualExpandedRange.getUpperBound();
-		System.out.println("is in" + actualExpandedRange);
 		
-		assertEquals("The upper bound value should be adjusted/expand to fit 0.99 into the "
-				+ "range -1, 1 even if its in bounds already",
-				testValue, actualUpperValue, 0.000000001d); 
+		assertEquals("The range should not be adjusted/expanded and should include original range",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
 	}	
+	
 	@Test 
-	public void testExpandToIncludeOutsideRange() { 
-		double testValue = -2;
+	public void testExpandToIncludeWithinRangeNegative() { 
+		Range expectedExpandedRange = new Range(-1, 1); 
+		double testValue = -0.50;
 		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
-		System.out.println("not in" + actualExpandedRange);
 		
-		assertEquals("The two objects compared once expanded should be different as value is outside the range.",
-				false, actualExpandedRange.equals(rangeObjectUnderTest)); 
+		assertEquals("The range should not be adjusted/expanded and should include original range",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
 	}	
+	
+	@Test 
+	public void testExpandToIncludeOnRangePositive() { 
+		Range expectedExpandedRange = new Range(-1, 1);
+		double testValue = 1;
+		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
+		
+		assertEquals("The range should not be adjusted/expanded and should include original range",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
+	}	
+	
+	@Test 
+	public void testExpandToIncludeOnRangeNegative() { 
+		Range expectedExpandedRange = new Range(-1, 1);
+		double testValue = -1;
+		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
+		
+		assertEquals("The range should not be adjusted/expanded and should include original range",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
+	}	
+	
+	@Test 
+	public void testExpandToIncludeOutsideRangePositive() { 
+		Range expectedExpandedRange = new Range(-1, 10);
+		double testValue = 10;
+		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
+		
+		assertEquals("The upper bound value should be adjusted/expanded and should include original range keeping same lowerbound",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
+	}	
+	 
+	@Test 
+	public void testExpandToIncludeOutsideRangeNegative() { 
+		Range expectedExpandedRange = new Range(-10, 1);
+		double testValue = -10;
+		Range actualExpandedRange = Range.expandToInclude(rangeObjectUnderTest, testValue);
+		
+		assertEquals("The upper bound value should be adjusted/expanded and should include original range keeping same lowerbound",
+				true, actualExpandedRange.equals(expectedExpandedRange)); 
+	}
 	 
 
 
